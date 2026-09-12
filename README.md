@@ -8,3 +8,6 @@ This repository contains only the files served to visitors. The editable source 
 Meal builder: https://theperformanceconsultant.github.io/tpc-motion-v3-site/tools/what-sounds-good/
 
 Publicly released on 12 September 2026, with homepage navigation and footer links. No sign-in is required; questionnaire answers remain in browser memory. The separate tasting table is not included. Source is maintained in the private tpc-motion-v3 repository.
+
+## Client kitchen access
+The meal-builder entry opens the authenticated Omega route at https://omegacoach.app/client-tools/meal-builder. The current public build contains no meal application or nutrition worker. Protected source and assets are maintained in the private Omega_Web and tpc-motion-v3 repositories.
