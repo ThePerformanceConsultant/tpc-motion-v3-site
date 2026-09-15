@@ -47,7 +47,7 @@
     .error { padding:20px; border:1px solid var(--line); background:var(--stone); font-size:14px; line-height:1.6; }
     noscript p { font-size:14px; line-height:1.6; padding:18px; background:var(--stone); }
     @media(max-width:900px) { .workspace { grid-template-columns:170px minmax(0,1fr); gap:24px; } .pages a { font-size:12px; gap:10px; } .image-frame { padding:8px; } }
-    @media(max-width:680px) { .masthead { padding-block:22px; gap:16px; } .brand { font-size:9px; max-width:140px; } .live-link { font-size:11px; padding:11px 14px; gap:12px; } .intro { padding-top:36px; padding-bottom:30px; } .intro>p:last-child { font-size:14px; } .workspace { display:block; } .pages { position:static; margin-bottom:30px; border-top:0; } .pages ol { display:flex; gap:8px; overflow-x:auto; padding:2px 2px 12px; } .pages li { flex-shrink:0; } .pages a { padding:10px 13px; border:1px solid var(--line); border-radius:24px; min-height:44px; font-size:12px; gap:8px; } .pages a[aria-current="page"] { border-color:var(--ink); background:var(--stone); } .number { border:0; width:auto; height:auto; font-size:10px; } .pages a[aria-current="page"] .number { color:var(--ink); background:none; } .viewer-head { gap:12px; padding-block:20px; } .full-size { font-size:11px; } .image-frame { padding:4px; border-radius:5px; } .page-controls { padding-top:20px; } .page-controls button { padding:12px 17px; gap:14px; } }
+    @media(max-width:680px) { .masthead { padding-block:22px; gap:16px; } .brand { font-size:9px; max-width:140px; } .live-link { font-size:11px; padding:11px 14px; gap:12px; } .intro { padding-top:36px; padding-bottom:30px; } .intro>p:last-child { font-size:14px; } .workspace { display:block; } .pages { position:static; margin-bottom:30px; border-top:0; } .pages ol { display:flex; gap:8px; overflow-x:auto; padding:2px 2px 12px; } .pages li { flex-shrink:0; } .pages a { padding:10px 13px; border:1px solid var(--line); border-radius:24px; min-height:44px; font-size:12px; gap:8px; } .pages a[aria-current="page"] { border-color:var(--ink); background:var(--stone); } .number { border:0; width:auto; height:auto; font-size:10px; } .pages a[aria-current="page"] .number { color:var(--ink); background:none; } .viewer-head { gap:12px; padding-block:20px; } .full-size { font-size:11px; } .image-frame { padding:4px; border-radius:5px; } .workspace { padding-bottom:100px; } .page-controls { position:fixed; bottom:0; left:0; right:0; z-index:2; background:#fff; padding:12px 24px max(12px,env(safe-area-inset-bottom)); border-top:1px solid var(--line); } .page-controls button { padding:12px 17px; gap:14px; } }
     @media(prefers-reduced-motion:reduce) { * { scroll-behavior:auto!important; } }
   </style>
 </head>
@@ -66,41 +66,43 @@
     <nav class="pages" aria-label="Screenshot pages">
       <ol>
         <li><a href="#introduction" data-page="introduction" aria-current="page"><span class="number">01</span>Introduction</a></li>
-        <li><a href="#goals" data-page="goals"><span class="number">02</span>Your goals</a></li>
-        <li><a href="#available-time" data-page="available-time"><span class="number">03</span>Available time</a></li>
-        <li><a href="#training-sessions" data-page="training-sessions"><span class="number">04</span>Training sessions</a></li>
-        <li><a href="#session-editor" data-page="session-editor"><span class="number">05</span>Session editor</a></li>
-        <li><a href="#session-checks" data-page="session-checks"><span class="number">06</span>Session checks</a></li>
-        <li><a href="#results" data-page="results"><span class="number">07</span>Results</a></li>
-        <li><a href="#mobile-calendar" data-page="mobile-calendar"><span class="number">08</span>Mobile calendar</a></li>
-        <li><a href="#mobile-results" data-page="mobile-results"><span class="number">09</span>Mobile results</a></li>
+        <li><a href="#mobile-introduction" data-page="mobile-introduction"><span class="number">02</span>Mobile introduction</a></li>
+        <li><a href="#goals" data-page="goals"><span class="number">03</span>Your goals</a></li>
+        <li><a href="#available-time" data-page="available-time"><span class="number">04</span>Available time</a></li>
+        <li><a href="#training-sessions" data-page="training-sessions"><span class="number">05</span>Training sessions</a></li>
+        <li><a href="#session-editor" data-page="session-editor"><span class="number">06</span>Session editor</a></li>
+        <li><a href="#session-checks" data-page="session-checks"><span class="number">07</span>Session checks</a></li>
+        <li><a href="#results" data-page="results"><span class="number">08</span>Results</a></li>
+        <li><a href="#mobile-calendar" data-page="mobile-calendar"><span class="number">09</span>Mobile calendar</a></li>
+        <li><a href="#mobile-results" data-page="mobile-results"><span class="number">10</span>Mobile results</a></li>
       </ol>
     </nav>
     <section class="viewer" id="viewer" aria-labelledby="page-title" tabindex="-1">
       <div class="viewer-head">
-        <div aria-live="polite" aria-atomic="true"><p id="page-count">Page 1 of 9</p><h2 id="page-title">Introduction</h2></div>
-        <a class="full-size" id="full-size" href="00-introduction.png" target="_blank" rel="noopener">Open full size</a>
+        <div aria-live="polite" aria-atomic="true"><p id="page-count">Page 1 of 10</p><h2 id="page-title">Introduction</h2></div>
+        <a class="full-size" id="full-size" href="v2-00-introduction.png" target="_blank" rel="noopener">Open full size</a>
       </div>
-      <figure class="image-frame" id="image-frame"><img id="screenshot" src="00-introduction.png" alt="Introduction to the published Training Week Stress Map."></figure>
+      <figure class="image-frame" id="image-frame"><img id="screenshot" src="v2-00-introduction.png" alt="Introduction to the published Training Week Stress Map."></figure>
       <p class="error" id="image-error" role="alert" hidden>This screenshot could not be loaded. Use Open full size to check the image file.</p>
       <div class="page-controls" aria-label="Browse screenshots">
         <button id="previous" type="button" disabled><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H5m6-6-6 6 6 6"/></svg>Previous</button>
         <button id="next" type="button">Next<svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button>
       </div>
-      <noscript><p>Open each screenshot directly: <a href="00-introduction.png">Introduction</a>, <a href="01-goals.png">Your goals</a>, <a href="02-available-time.png">Available time</a>, <a href="03-training-sessions.png">Training sessions</a>, <a href="03-session-editor.png">Session editor</a>, <a href="04-session-checks.png">Session checks</a>, <a href="05-results.png">Results</a>, <a href="07-mobile-calendar.png">Mobile calendar</a>, <a href="06-mobile-results.png">Mobile results</a>.</p></noscript>
+      <noscript><p>Open each screenshot directly: <a href="v2-00-introduction.png">Introduction</a>, <a href="v2-08-mobile-introduction.png">Mobile introduction</a>, <a href="v2-01-goals.png">Your goals</a>, <a href="v2-02-available-time.png">Available time</a>, <a href="v2-03-training-sessions.png">Training sessions</a>, <a href="v2-03-session-editor.png">Session editor</a>, <a href="v2-04-session-checks.png">Session checks</a>, <a href="v2-05-results.png">Results</a>, <a href="v2-07-mobile-calendar.png">Mobile calendar</a>, <a href="v2-06-mobile-results.png">Mobile results</a>.</p></noscript>
     </section>
   </main>
   <script>
     const pages = [
-      { id:'introduction', title:'Introduction', file:'00-introduction.png', alt:'Introduction to the published Training Week Stress Map.' },
-      { id:'goals', title:'Your goals', file:'01-goals.png', alt:'Your goals page populated with illustrative training goals.' },
-      { id:'available-time', title:'Available time', file:'02-available-time.png', alt:'Available time page populated with illustrative time slots and commitments.' },
-      { id:'training-sessions', title:'Training sessions', file:'03-training-sessions.png', alt:'Training sessions page populated with an illustrative training week.' },
-      { id:'session-editor', title:'Session editor', file:'03-session-editor.png', alt:'Session editor populated with illustrative session details.' },
-      { id:'session-checks', title:'Session checks', file:'04-session-checks.png', alt:'Session checks page populated with illustrative answers.' },
-      { id:'results', title:'Results', file:'05-results.png', alt:'Results page generated from the illustrative inputs.' },
-      { id:'mobile-calendar', title:'Mobile calendar', file:'07-mobile-calendar.png', alt:'The illustrative training week displayed at mobile width.', mobile:true },
-      { id:'mobile-results', title:'Mobile results', file:'06-mobile-results.png', alt:'The illustrative results displayed at mobile width.', mobile:true }
+      { id:'introduction', title:'Introduction', file:'v2-00-introduction.png', alt:'Introduction to the published Training Week Stress Map.' },
+      { id:'mobile-introduction', title:'Mobile introduction', file:'v2-08-mobile-introduction.png', alt:'Introduction to the published Training Week Stress Map displayed at mobile width.', mobile:true },
+      { id:'goals', title:'Your goals', file:'v2-01-goals.png', alt:'Your goals page populated with illustrative training goals.' },
+      { id:'available-time', title:'Available time', file:'v2-02-available-time.png', alt:'Available time page populated with illustrative time slots and commitments.' },
+      { id:'training-sessions', title:'Training sessions', file:'v2-03-training-sessions.png', alt:'Training sessions page populated with an illustrative training week.' },
+      { id:'session-editor', title:'Session editor', file:'v2-03-session-editor.png', alt:'Session editor populated with illustrative session details.' },
+      { id:'session-checks', title:'Session checks', file:'v2-04-session-checks.png', alt:'Session checks page populated with illustrative answers.' },
+      { id:'results', title:'Results', file:'v2-05-results.png', alt:'Results page generated from the illustrative inputs.' },
+      { id:'mobile-calendar', title:'Mobile calendar', file:'v2-07-mobile-calendar.png', alt:'The illustrative training week displayed at mobile width.', mobile:true },
+      { id:'mobile-results', title:'Mobile results', file:'v2-06-mobile-results.png', alt:'The illustrative results displayed at mobile width.', mobile:true }
     ];
     const image = document.getElementById('screenshot');
     const imageError = document.getElementById('image-error');
