@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Stress Map | Populated example</title>
+  <style>
+    :root { --ink:#20201e; --muted:#66665f; --line:#dcdcd7; --stone:#f5f5f2; font-family:"Helvetica Neue",Arial,sans-serif; color:var(--ink); background:#fff; font-synthesis:none; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-width:320px; }
+    a { color:inherit; text-underline-offset:4px; }
+    button { font:inherit; cursor:pointer; }
+    :focus-visible { outline:2px solid var(--ink); outline-offset:5px; }
+    .skip { position:fixed; top:12px; left:20px; padding:12px 16px; background:var(--ink); color:#fff; z-index:10; transform:translateY(-150%); }
+    .skip:focus { transform:none; }
+    .masthead { padding:30px clamp(24px,4.4vw,72px); border-bottom:1px solid var(--line); display:flex; gap:28px; justify-content:space-between; align-items:center; }
+    .brand { margin:0; max-width:170px; font-size:11px; letter-spacing:.055em; line-height:1.6; text-transform:uppercase; }
+    .live-link { display:inline-flex; align-items:center; gap:24px; border:1px solid #b8b9b1; border-radius:30px; padding:13px 20px; text-decoration:none; font-size:13px; white-space:nowrap; }
+    .live-link:hover { background:var(--stone); }
+    .arrow { display:block; width:19px; height:19px; fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; flex-shrink:0; }
+    .intro { padding:48px clamp(24px,4.4vw,72px) 40px; }
+    .eyebrow { margin:0 0 20px; color:var(--muted); font-size:10px; text-transform:uppercase; letter-spacing:.1em; }
+    h1 { margin:0 0 22px; font-size:clamp(38px,4.8vw,70px); font-weight:400; letter-spacing:-.045em; line-height:1.04; }
+    .intro>p:last-child { max-width:660px; margin:0; color:var(--muted); font-size:15px; line-height:1.7; }
+    .workspace { display:grid; grid-template-columns:210px minmax(0,1fr); gap:36px; padding:0 clamp(24px,4.4vw,72px) 64px; align-items:start; }
+    .pages { position:sticky; top:24px; border-top:1px solid var(--ink); }
+    .pages ol { margin:0; padding:0; list-style:none; }
+    .pages a { display:flex; align-items:center; gap:15px; padding:16px 10px 16px 0; border-bottom:1px solid var(--line); text-decoration:none; font-size:13px; line-height:1.4; min-height:53px; }
+    .pages a:hover { background:var(--stone); }
+    .pages a[aria-current="page"] { color:var(--ink); font-weight:600; }
+    .pages a[aria-current="page"] .number { background:var(--ink); color:#fff; border-color:var(--ink); }
+    .number { display:inline-flex; width:27px; height:27px; border:1px solid var(--line); border-radius:50%; align-items:center; justify-content:center; flex-shrink:0; font-size:10px; font-weight:400; font-variant-numeric:tabular-nums; }
+    .viewer { min-width:0; }
+    .viewer-head { display:flex; align-items:end; justify-content:space-between; gap:20px; border-top:1px solid var(--ink); padding:20px 0 22px; }
+    .viewer-head p { margin:0 0 8px; color:var(--muted); font-size:10px; letter-spacing:.06em; text-transform:uppercase; }
+    h2 { margin:0; font-size:clamp(24px,2.5vw,35px); font-weight:400; letter-spacing:-.035em; line-height:1.2; }
+    .full-size { font-size:12px; padding:10px 0; white-space:nowrap; }
+    .image-frame { margin:0; background:var(--stone); padding:14px; border:1px solid var(--line); border-radius:8px; }
+    .image-frame img { display:block; width:100%; height:auto; background:#fff; }
+    .image-frame.is-mobile img { width:min(100%,390px); margin:0 auto; }
+    .page-controls { display:flex; justify-content:space-between; gap:18px; padding:26px 0 0; }
+    .page-controls button { display:flex; align-items:center; justify-content:center; gap:22px; min-height:48px; padding:12px 20px; border:1px solid #b8b9b1; border-radius:28px; background:#fff; color:var(--ink); font-size:13px; }
+    .page-controls button:last-child { background:var(--ink); border-color:var(--ink); color:#fff; }
+    .page-controls button:disabled { opacity:.35; cursor:default; }
+    .page-controls button:not(:disabled):hover { background:#e9e9e3; color:var(--ink); }
+    .error { padding:20px; border:1px solid var(--line); background:var(--stone); font-size:14px; line-height:1.6; }
+    noscript p { font-size:14px; line-height:1.6; padding:18px; background:var(--stone); }
+    @media(max-width:900px) { .workspace { grid-template-columns:170px minmax(0,1fr); gap:24px; } .pages a { font-size:12px; gap:10px; } .image-frame { padding:8px; } }
+    @media(max-width:680px) { .masthead { padding-block:22px; gap:16px; } .brand { font-size:9px; max-width:140px; } .live-link { font-size:11px; padding:11px 14px; gap:12px; } .intro { padding-top:36px; padding-bottom:30px; } .intro>p:last-child { font-size:14px; } .workspace { display:block; } .pages { position:static; margin-bottom:30px; border-top:0; } .pages ol { display:flex; gap:8px; overflow-x:auto; padding:2px 2px 12px; } .pages li { flex-shrink:0; } .pages a { padding:10px 13px; border:1px solid var(--line); border-radius:24px; min-height:44px; font-size:12px; gap:8px; } .pages a[aria-current="page"] { border-color:var(--ink); background:var(--stone); } .number { border:0; width:auto; height:auto; font-size:10px; } .pages a[aria-current="page"] .number { color:var(--ink); background:none; } .viewer-head { gap:12px; padding-block:20px; } .full-size { font-size:11px; } .image-frame { padding:4px; border-radius:5px; } .page-controls { padding-top:20px; } .page-controls button { padding:12px 17px; gap:14px; } }
+    @media(prefers-reduced-motion:reduce) { * { scroll-behavior:auto!important; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#viewer">Skip to screenshot</a>
+  <header class="masthead">
+    <p class="brand">The Performance Consultant</p>
+    <a class="live-link" href="https://theperformanceconsultant.github.io/tpc-motion-v3-site/tools/hybrid-training-week-stress-map/" target="_blank" rel="noopener">Open the live tool<svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
+  </header>
+  <section class="intro" aria-labelledby="title">
+    <p class="eyebrow">Training Week Stress Map</p>
+    <h1 id="title">Populated example</h1>
+    <p>Actual screenshots of the published tool, page by page, with illustrative inputs.</p>
+  </section>
+  <main class="workspace">
+    <nav class="pages" aria-label="Screenshot pages">
+      <ol>
+        <li><a href="#introduction" data-page="introduction" aria-current="page"><span class="number">01</span>Introduction</a></li>
+        <li><a href="#goals" data-page="goals"><span class="number">02</span>Your goals</a></li>
+        <li><a href="#available-time" data-page="available-time"><span class="number">03</span>Available time</a></li>
+        <li><a href="#training-sessions" data-page="training-sessions"><span class="number">04</span>Training sessions</a></li>
+        <li><a href="#session-editor" data-page="session-editor"><span class="number">05</span>Session editor</a></li>
+        <li><a href="#session-checks" data-page="session-checks"><span class="number">06</span>Session checks</a></li>
+        <li><a href="#results" data-page="results"><span class="number">07</span>Results</a></li>
+        <li><a href="#mobile-calendar" data-page="mobile-calendar"><span class="number">08</span>Mobile calendar</a></li>
+        <li><a href="#mobile-results" data-page="mobile-results"><span class="number">09</span>Mobile results</a></li>
+      </ol>
+    </nav>
+    <section class="viewer" id="viewer" aria-labelledby="page-title" tabindex="-1">
+      <div class="viewer-head">
+        <div aria-live="polite" aria-atomic="true"><p id="page-count">Page 1 of 9</p><h2 id="page-title">Introduction</h2></div>
+        <a class="full-size" id="full-size" href="00-introduction.png" target="_blank" rel="noopener">Open full size</a>
+      </div>
+      <figure class="image-frame" id="image-frame"><img id="screenshot" src="00-introduction.png" alt="Introduction to the published Training Week Stress Map."></figure>
+      <p class="error" id="image-error" role="alert" hidden>This screenshot could not be loaded. Use Open full size to check the image file.</p>
+      <div class="page-controls" aria-label="Browse screenshots">
+        <button id="previous" type="button" disabled><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H5m6-6-6 6 6 6"/></svg>Previous</button>
+        <button id="next" type="button">Next<svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button>
+      </div>
+      <noscript><p>Open each screenshot directly: <a href="00-introduction.png">Introduction</a>, <a href="01-goals.png">Your goals</a>, <a href="02-available-time.png">Available time</a>, <a href="03-training-sessions.png">Training sessions</a>, <a href="03-session-editor.png">Session editor</a>, <a href="04-session-checks.png">Session checks</a>, <a href="05-results.png">Results</a>, <a href="07-mobile-calendar.png">Mobile calendar</a>, <a href="06-mobile-results.png">Mobile results</a>.</p></noscript>
+    </section>
+  </main>
+  <script>
+    const pages = [
+      { id:'introduction', title:'Introduction', file:'00-introduction.png', alt:'Introduction to the published Training Week Stress Map.' },
+      { id:'goals', title:'Your goals', file:'01-goals.png', alt:'Your goals page populated with illustrative training goals.' },
+      { id:'available-time', title:'Available time', file:'02-available-time.png', alt:'Available time page populated with illustrative time slots and commitments.' },
+      { id:'training-sessions', title:'Training sessions', file:'03-training-sessions.png', alt:'Training sessions page populated with an illustrative training week.' },
+      { id:'session-editor', title:'Session editor', file:'03-session-editor.png', alt:'Session editor populated with illustrative session details.' },
+      { id:'session-checks', title:'Session checks', file:'04-session-checks.png', alt:'Session checks page populated with illustrative answers.' },
+      { id:'results', title:'Results', file:'05-results.png', alt:'Results page generated from the illustrative inputs.' },
+      { id:'mobile-calendar', title:'Mobile calendar', file:'07-mobile-calendar.png', alt:'The illustrative training week displayed at mobile width.', mobile:true },
+      { id:'mobile-results', title:'Mobile results', file:'06-mobile-results.png', alt:'The illustrative results displayed at mobile width.', mobile:true }
+    ];
+    const image = document.getElementById('screenshot');
+    const imageError = document.getElementById('image-error');
+    const previous = document.getElementById('previous');
+    const next = document.getElementById('next');
+    let current = 0;
+    function showPage(shouldScroll = false) {
+      if (location.hash === '#viewer') return;
+      const found = pages.findIndex(page => page.id === location.hash.slice(1));
+      current = found < 0 ? 0 : found;
+      const page = pages[current];
+      imageError.hidden = true;
+      image.alt = page.alt;
+      image.src = page.file;
+      document.getElementById('page-title').textContent = page.title;
+      document.getElementById('page-count').textContent = `Page ${current + 1} of ${pages.length}`;
+      document.getElementById('full-size').href = page.file;
+      document.getElementById('image-frame').classList.toggle('is-mobile', Boolean(page.mobile));
+      document.querySelectorAll('[data-page]').forEach(link => {
+        if (link.dataset.page === page.id) link.setAttribute('aria-current', 'page');
+        else link.removeAttribute('aria-current');
+      });
+      previous.disabled = current === 0;
+      next.disabled = current === pages.length - 1;
+      document.title = `${page.title} | Stress Map populated example`;
+      if (shouldScroll) document.getElementById('viewer').scrollIntoView({ block:'start', behavior:'instant' });
+    }
+    image.addEventListener('error', () => { imageError.hidden = false; });
+    previous.addEventListener('click', () => { if (current > 0) location.hash = pages[current - 1].id; });
+    next.addEventListener('click', () => { if (current < pages.length - 1) location.hash = pages[current + 1].id; });
+    window.addEventListener('hashchange', () => showPage(true));
+    showPage();
+  </script>
+</body>
+</html>
