@@ -60,7 +60,7 @@
   <section class="intro" aria-labelledby="title">
     <p class="eyebrow">Training Week Stress Map</p>
     <h1 id="title">Populated example</h1>
-    <p>Actual screenshots of the published tool, page by page, with illustrative inputs.</p>
+    <p>Screenshots of the updated tool, including multiple priorities, effort ranges and the editable ATHX template. All inputs shown are illustrative.</p>
   </section>
   <main class="workspace">
     <nav class="pages" aria-label="Screenshot pages">
@@ -75,34 +75,36 @@
         <li><a href="#results" data-page="results"><span class="number">08</span>Results</a></li>
         <li><a href="#mobile-calendar" data-page="mobile-calendar"><span class="number">09</span>Mobile calendar</a></li>
         <li><a href="#mobile-results" data-page="mobile-results"><span class="number">10</span>Mobile results</a></li>
+        <li><a href="#mobile-athx" data-page="mobile-athx"><span class="number">11</span>Mobile ATHX template</a></li>
       </ol>
     </nav>
     <section class="viewer" id="viewer" aria-labelledby="page-title" tabindex="-1">
       <div class="viewer-head">
-        <div aria-live="polite" aria-atomic="true"><p id="page-count">Page 1 of 10</p><h2 id="page-title">Introduction</h2></div>
-        <a class="full-size" id="full-size" href="v2-00-introduction.png" target="_blank" rel="noopener">Open full size</a>
+        <div aria-live="polite" aria-atomic="true"><p id="page-count">Page 1 of 11</p><h2 id="page-title">Introduction</h2></div>
+        <a class="full-size" id="full-size" href="v3-00-introduction.png" target="_blank" rel="noopener">Open full size</a>
       </div>
-      <figure class="image-frame" id="image-frame"><img id="screenshot" src="v2-00-introduction.png" alt="Introduction to the published Training Week Stress Map."></figure>
+      <figure class="image-frame" id="image-frame"><img id="screenshot" src="v3-00-introduction.png" alt="Introduction to the published Training Week Stress Map."></figure>
       <p class="error" id="image-error" role="alert" hidden>This screenshot could not be loaded. Use Open full size to check the image file.</p>
       <div class="page-controls" aria-label="Browse screenshots">
         <button id="previous" type="button" disabled><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H5m6-6-6 6 6 6"/></svg>Previous</button>
         <button id="next" type="button">Next<svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button>
       </div>
-      <noscript><p>Open each screenshot directly: <a href="v2-00-introduction.png">Introduction</a>, <a href="v2-08-mobile-introduction.png">Mobile introduction</a>, <a href="v2-01-goals.png">Your goals</a>, <a href="v2-02-available-time.png">Available time</a>, <a href="v2-03-training-sessions.png">Training sessions</a>, <a href="v2-03-session-editor.png">Session editor</a>, <a href="v2-04-session-checks.png">Session checks</a>, <a href="v2-05-results.png">Results</a>, <a href="v2-07-mobile-calendar.png">Mobile calendar</a>, <a href="v2-06-mobile-results.png">Mobile results</a>.</p></noscript>
+      <noscript><p>Open each screenshot directly: <a href="v3-00-introduction.png">Introduction</a>, <a href="v3-08-mobile-introduction.png">Mobile introduction</a>, <a href="v3-01-goals.png">Your goals</a>, <a href="v3-02-available-time.png">Available time</a>, <a href="v3-03-training-sessions.png">Training sessions</a>, <a href="v3-03-session-editor.png">Session editor</a>, <a href="v3-04-session-checks.png">Session checks</a>, <a href="v3-05-results.png">Results</a>, <a href="v3-07-mobile-calendar.png">Mobile calendar</a>, <a href="v3-06-mobile-results.png">Mobile results</a>.</p></noscript>
     </section>
   </main>
   <script>
     const pages = [
-      { id:'introduction', title:'Introduction', file:'v2-00-introduction.png', alt:'Introduction to the published Training Week Stress Map.' },
-      { id:'mobile-introduction', title:'Mobile introduction', file:'v2-08-mobile-introduction.png', alt:'Introduction to the published Training Week Stress Map displayed at mobile width.', mobile:true },
-      { id:'goals', title:'Your goals', file:'v2-01-goals.png', alt:'Your goals page populated with illustrative training goals.' },
-      { id:'available-time', title:'Available time', file:'v2-02-available-time.png', alt:'Available time page populated with illustrative time slots and commitments.' },
-      { id:'training-sessions', title:'Training sessions', file:'v2-03-training-sessions.png', alt:'Training sessions page populated with an illustrative training week.' },
-      { id:'session-editor', title:'Session editor', file:'v2-03-session-editor.png', alt:'Session editor populated with illustrative session details.' },
-      { id:'session-checks', title:'Session checks', file:'v2-04-session-checks.png', alt:'Session checks page populated with illustrative answers.' },
-      { id:'results', title:'Results', file:'v2-05-results.png', alt:'Results page generated from the illustrative inputs.' },
-      { id:'mobile-calendar', title:'Mobile calendar', file:'v2-07-mobile-calendar.png', alt:'The illustrative training week displayed at mobile width.', mobile:true },
-      { id:'mobile-results', title:'Mobile results', file:'v2-06-mobile-results.png', alt:'The illustrative results displayed at mobile width.', mobile:true }
+      { id:'introduction', title:'Introduction', file:'v3-00-introduction.png', alt:'Introduction to the published Training Week Stress Map.' },
+      { id:'mobile-introduction', title:'Mobile introduction', file:'v3-08-mobile-introduction.png', alt:'Introduction to the published Training Week Stress Map displayed at mobile width.', mobile:true },
+      { id:'goals', title:'Your goals', file:'v3-01-goals.png', alt:'Your goals page populated with illustrative training goals.' },
+      { id:'available-time', title:'Available time', file:'v3-02-available-time.png', alt:'Available time page populated with illustrative time slots and commitments.' },
+      { id:'training-sessions', title:'Training sessions', file:'v3-03-training-sessions.png', alt:'Training sessions page populated with an illustrative training week.' },
+      { id:'session-editor', title:'Session editor', file:'v3-03-session-editor.png', alt:'Session editor populated with illustrative session details.' },
+      { id:'session-checks', title:'Session checks', file:'v3-04-session-checks.png', alt:'Session checks page populated with illustrative answers.' },
+      { id:'results', title:'Results', file:'v3-05-results.png', alt:'Results page generated from the illustrative inputs.' },
+      { id:'mobile-calendar', title:'Mobile calendar', file:'v3-07-mobile-calendar.png', alt:'The illustrative training week displayed at mobile width.', mobile:true },
+      { id:'mobile-results', title:'Mobile results', file:'v3-06-mobile-results.png', alt:'The illustrative results displayed at mobile width.', mobile:true },
+      { id:'mobile-athx', title:'Mobile ATHX template', file:'v3-09-mobile-athx.png', alt:'Editable ATHX template with representative timings on a phone-size screen.', mobile:true }
     ];
     const image = document.getElementById('screenshot');
     const imageError = document.getElementById('image-error');
